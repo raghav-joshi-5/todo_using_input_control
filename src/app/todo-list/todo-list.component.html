@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 mb-5 mb-md-0">
+    <div class="form-group">
+      <label for="todoItem"><h4>Todo Item</h4></label>
+      <input #todoItem type="text" id="todoItem" class="form-control" />
+    </div>
+    <button (click)="onBtn()" class="btn btn-sm btn-info btn-block">
+      Add todo Item
+    </button>
+  </div>
+
+  <div class="col-md-6">
+    <ul *ngIf="todoArray.length > 0; else noTodo" class="list-group">
+      <h4>List Items</h4>
+      <li *ngFor="let list of todoArray" class="list-group-item">
+        {{ list.todoItem }}
+      </li>
+    </ul>
+    <ng-template #noTodo>
+      <p class="alert alert-danger">There is NO list Items</p>
+    </ng-template>
+  </div>
+</div>
