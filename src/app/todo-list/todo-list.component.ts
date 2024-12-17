@@ -31,6 +31,7 @@ export class TodoListComponent implements OnInit {
       todoItem: this.todoItem.nativeElement.value,
       todoId: this.generateUuid(),
     };
+    this.todoItem.nativeElement.value = '';
     console.log(newObj);
     this.todoArray.push(newObj);
   }
